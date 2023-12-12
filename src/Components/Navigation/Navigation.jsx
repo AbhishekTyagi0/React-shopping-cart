@@ -1,18 +1,28 @@
 import React from "react";
 import "./Navigation.css";
+import { Link, Outlet } from "react-router-dom";
 
 const Navigation = () => {
   return (
     <>
       <div className="nav-container">
-        <h3>Shoppingo!</h3>
+        <h3>
+          <Link to="/">Shoppingo!</Link>
+        </h3>
         <div className="nav-container-pages">
           <ul>
-            <li>Home</li>
-            <li>Shop</li>
-            <li>About</li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/shop">Shop</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
           </ul>
         </div>
+        <Outlet />
       </div>
     </>
   );
