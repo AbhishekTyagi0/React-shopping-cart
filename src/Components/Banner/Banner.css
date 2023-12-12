@@ -1,0 +1,64 @@
+.banner-container {
+  width: 80%;
+  margin: 1rem auto;
+  background-color: #ffffff;
+  display: flex;
+}
+
+.banner-img-container {
+  width: 60%;
+  background-image: url(https://img.freepik.com/premium-psd/smart-tv-mockup-isolated-3d-rendering_322208-226.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(1.2) contrast(1.2) grayscale(30%);
+  height: 70vh;
+}
+
+.banner-led {
+  margin-top: 12rem;
+  display: flex;
+}
+
+.banner-led > div > h3 {
+  font-size: 1.8rem;
+  font-weight: bolder;
+  color: purple;
+  margin-left: 3rem;
+}
+
+.banner-led > div > h2 {
+  font-size: 2.2rem;
+  width: 130%;
+  margin-left: 3rem;
+  margin-top: 0.1rem;
+}
+.banner-led > div > h2 > span {
+  color: purple;
+}
+
+.banner-led > div > button {
+  width: 13rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: 1.4rem;
+  border-radius: 0.6rem;
+  border: 3px solid purple;
+  color: purple;
+  font-weight: bolder;
+  margin-left: 3rem;
+}
+
+.banner-led > div > button:hover {
+  background-color: purple;
+  color: white;
+  cursor: pointer;
+}
+
+.banner-led > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 60%;
+  margin-bottom: 2.3rem;
+}
