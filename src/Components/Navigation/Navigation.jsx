@@ -20,6 +20,11 @@ const Navigation = () => {
             <li>
               <Link to="/about">About</Link>
             </li>
+            <li>
+              <Link to="/cart">
+                <i className="fa-solid fa-cart-shopping"></i>
+              </Link>
+            </li>
           </ul>
         </div>
         <Outlet />

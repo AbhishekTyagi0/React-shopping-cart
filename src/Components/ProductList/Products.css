@@ -6,7 +6,6 @@
 }
 
 .cards {
-  /* border: 1px solid skyblue; */
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -14,6 +13,13 @@
   gap: 0.3rem;
   background-color: white;
   padding: 1rem 1rem;
+  transition: box-shadow 0.4s ease;
+  transition: transform 0.4s ease;
+}
+
+.cards:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
 }
 
 .cards > img {
@@ -61,16 +67,14 @@
   border-radius: 0.3rem;
 }
 
-/* .cards-button > button:hover {
-} */
 .cards-button > :nth-child(1):hover {
   background-color: rgb(7, 105, 7);
-  color: #eee;
+  color: white;
   cursor: pointer;
 }
 
 .cards-button > :nth-child(2):hover {
   background-color: rgb(205, 15, 15);
-  color: #eee;
+  color: white;
   cursor: pointer;
 }
