@@ -1,29 +1,25 @@
-import React, { useEffect, useState } from "react";
+import ProductCard from "./ProductCard";
+import "./Products.css";
 
-const Product = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("https://fakestoreapi.com/products/1");
-        const data = await response.json();
-        console.log(data);
-        setProducts(data);
-      } catch (error) {
-        console.error("Error:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
+const Product = ({ products, error, loading }) => {
+  if (loading) {
+    return <h3>Loading...</h3>;
+  }
+  if (error) {
+    return <h3>Error: {error.message}</h3>;
+  }
   return (
-    <div>
-      <h3>fetching data</h3>
-      <div>
-        <img src={products.image} alt="image" />
-      </div>
+    <div className="card-container">
+      {products.map((item) => (
+        <ProductCard
+          key={item.id}
+          image={item.image}
+          title={item.title}
+          price={item.price}
+          rating={item.rating.rate}
+          review={item.rating.count}
+        />
+      ))}
     </div>
   );
 };

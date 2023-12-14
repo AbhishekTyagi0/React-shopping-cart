@@ -1,11 +1,9 @@
-import React from "react";
 import Product from "../Components/ProductList/Product";
 
-const Shop = () => {
+const Shop = ({ products, error, loading }) => {
   return (
-    <div>
-      <h1>Shop Page</h1>
-      <Product />
+    <div className="shop-container">
+      <Product products={products} error={error} loading={loading} />
     </div>
   );
 };

@@ -2,3 +2,13 @@ img {
   width: 200px;
   height: 200px;
 }
+
+.body-container {
+  height: 100vh;
+  width: 60%;
+}
+
+.footers {
+  margin-top: auto;
+  background-color: aliceblue;
+}
