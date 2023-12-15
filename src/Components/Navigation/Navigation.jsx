@@ -1,8 +1,8 @@
 import React from "react";
 import "./Navigation.css";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Navigation = () => {
+const Navigation = ({ cartItem }) => {
   return (
     <>
       <div className="nav-container">
@@ -22,12 +22,13 @@ const Navigation = () => {
             </li>
             <li>
               <Link to="/cart">
-                <i className="fa-solid fa-cart-shopping"></i>
+                <i className="fa-solid fa-cart-shopping cart-icon">
+                  <p>{cartItem}</p>
+                </i>
               </Link>
             </li>
           </ul>
         </div>
-        <Outlet />
       </div>
     </>
   );

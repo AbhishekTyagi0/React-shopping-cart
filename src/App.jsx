@@ -12,6 +12,7 @@ const App = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [cartItem, setCartItem] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,14 +39,34 @@ const App = () => {
     fetchData();
   }, []);
 
+  const handleAddToCart = (item) => {
+    const updateCart = [...cartItem];
+    updateCart.push(item);
+    setCartItem(updateCart);
+  };
+
+  const handleBuyNow = (item) => {
+    const updateCart = [...cartItem];
+    updateCart.push(item);
+    setCartItem(updateCart);
+  };
+
   return (
     <Router>
-      <Navigation />
+      <Navigation cartItem={cartItem.length} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
           path="/shop"
-          element={<Shop products={products} error={error} loading={loading} />}
+          element={
+            <Shop
+              products={products}
+              error={error}
+              loading={loading}
+              onAddToCart={handleAddToCart}
+              onBuy={handleBuyNow}
+            />
+          }
         />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Error />} />

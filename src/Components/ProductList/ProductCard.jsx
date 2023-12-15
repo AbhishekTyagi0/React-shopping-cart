@@ -1,6 +1,12 @@
-import React from "react";
-
-const ProductCard = ({ image, title, price, rating, review }) => {
+const ProductCard = ({
+  image,
+  title,
+  price,
+  rating,
+  review,
+  onBuy,
+  onAddToCart,
+}) => {
   return (
     <div className="cards">
       <img src={image} alt="images" />
@@ -17,8 +23,8 @@ const ProductCard = ({ image, title, price, rating, review }) => {
         </p>
       </div>
       <div className="cards-button">
-        <button>Buy Now</button>
-        <button>Add to Cart</button>
+        <button onClick={onBuy}>Buy Now</button>
+        <button onClick={onAddToCart}>Add to Cart</button>
       </div>
     </div>
   );

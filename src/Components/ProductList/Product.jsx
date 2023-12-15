@@ -1,7 +1,7 @@
 import ProductCard from "./ProductCard";
 import "./Products.css";
 
-const Product = ({ products, error, loading }) => {
+const Product = ({ products, error, loading, onBuy, onAddToCart }) => {
   return (
     <>
       {loading && <h3>Loading...</h3>}
@@ -16,6 +16,8 @@ const Product = ({ products, error, loading }) => {
               price={item.price}
               rating={item.rating.rate}
               review={item.rating.count}
+              onBuy={() => onBuy(item)}
+              onAddToCart={() => onAddToCart(item)}
             />
           ))}
         </div>
