@@ -7,12 +7,14 @@ import About from "./Pages/About";
 import Error from "./Pages/Error";
 import Footer from "./Components/Footer/Footer";
 import "./App.css";
+import Cart from "./Pages/Cart";
 
 const App = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [cartItem, setCartItem] = useState([]);
+  // const [cartItemQuantity, setCartItemQuantity] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,14 +43,44 @@ const App = () => {
 
   const handleAddToCart = (item) => {
     const updateCart = [...cartItem];
-    updateCart.push(item);
-    setCartItem(updateCart);
+    const findItem = updateCart.find((cartItem) => cartItem.id === item.id);
+
+    if (findItem) {
+      handleIncrement(item.id);
+    } else {
+      updateCart.push({ ...item, cartItemQuantity: 1 });
+      setCartItem(updateCart);
+    }
   };
 
   const handleBuyNow = (item) => {
     const updateCart = [...cartItem];
     updateCart.push(item);
     setCartItem(updateCart);
+  };
+
+  const handleIncrement = (cartId) => {
+    setCartItem((cartItem) =>
+      cartItem.map((item) =>
+        item.id === cartId
+          ? { ...item, cartItemQuantity: item.cartItemQuantity + 1 }
+          : item
+      )
+    );
+  };
+
+  const handleDecrement = (cartId) => {
+    setCartItem((cartItem) =>
+      cartItem.map((item) =>
+        item.id === cartId
+          ? { ...item, cartItemQuantity: item.cartItemQuantity - 1 }
+          : item
+      )
+    );
+  };
+
+  const removeHandler = (removeId) => {
+    setCartItem((cartItem) => cartItem.filter((item) => item.id !== removeId));
   };
 
   return (
@@ -69,6 +101,17 @@ const App = () => {
           }
         />
         <Route path="/about" element={<About />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cartItem={cartItem}
+              increaseItem={handleIncrement}
+              decreaseItem={handleDecrement}
+              onRemove={removeHandler}
+            />
+          }
+        />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
