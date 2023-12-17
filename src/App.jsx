@@ -14,7 +14,6 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [cartItem, setCartItem] = useState([]);
-  // const [cartItemQuantity, setCartItemQuantity] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,8 +54,14 @@ const App = () => {
 
   const handleBuyNow = (item) => {
     const updateCart = [...cartItem];
-    updateCart.push(item);
-    setCartItem(updateCart);
+    const findItem = updateCart.find((item) => item.id === item.id);
+
+    if (findItem) {
+      handleIncrement(item.id);
+    } else {
+      updateCart.push({ ...item, cartItemQuantity: 1 });
+      setCartItem(updateCart);
+    }
   };
 
   const handleIncrement = (cartId) => {

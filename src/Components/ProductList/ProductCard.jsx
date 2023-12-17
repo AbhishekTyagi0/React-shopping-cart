@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router";
+
 const ProductCard = ({
   image,
   title,
@@ -7,6 +9,12 @@ const ProductCard = ({
   onBuy,
   onAddToCart,
 }) => {
+  const navigate = useNavigate();
+
+  const handleOnBuy = () => {
+    navigate("/cart");
+  };
+
   return (
     <div className="cards">
       <img src={image} alt="images" />
@@ -23,7 +31,14 @@ const ProductCard = ({
         </p>
       </div>
       <div className="cards-button">
-        <button onClick={onBuy}>Buy Now</button>
+        <button
+          onClick={() => {
+            handleOnBuy();
+            onBuy && onBuy();
+          }}
+        >
+          Buy Now
+        </button>
         <button onClick={onAddToCart}>Add to Cart</button>
       </div>
     </div>

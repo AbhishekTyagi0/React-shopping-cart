@@ -73,3 +73,41 @@
   font-weight: bolder;
   transform: scale(1.04);
 }
+
+.checkout-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6rem;
+  margin-top: 1rem;
+}
+
+.checkout-cart > .btn1 {
+  width: 7rem;
+  height: 2.3rem;
+  font-weight: bold;
+  background-color: green;
+  border: none;
+  color: #eee;
+}
+
+.checkout-cart > .btn1:hover {
+  background-color: darkgreen;
+  color: white;
+  cursor: pointer;
+}
+
+.checkout-cart > .btn2 {
+  width: 7rem;
+  height: 2.3rem;
+  font-weight: bold;
+  background-color: red;
+  color: #eee;
+  border: none;
+}
+
+.checkout-cart > .btn2:hover {
+  background-color: darkred;
+  color: white;
+  cursor: pointer;
+}
