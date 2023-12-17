@@ -1,16 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CartProduct from "../Components/CartProduct/CartProduct";
+import { useLocation, useNavigate } from "react-router";
 
-const Cart = ({ cartItem, decreaseItem, increaseItem, onRemove }) => {
+const Cart = ({
+  cartItem,
+  setCartItem,
+  decreaseItem,
+  increaseItem,
+  onRemove,
+  totalAmount,
+}) => {
   console.log(cartItem);
+  const navigate = useNavigate();
+
+  const handleShopNow = () => {
+    navigate("/shop");
+  };
+  const handleCheckout = () => {
+    setCartItem([]);
+    navigate("/shop");
+    alert("Are you sure you wants to checkout!");
+  };
 
   return (
     <>
       {cartItem.length > 0 && (
         <div className="checkout-cart">
-          <button className="btn1">Shop More</button>
-          <h2>Gross Amount: 100$</h2>
-          <button className="btn2">Checkout Now</button>
+          <button className="btn1" onClick={() => handleShopNow()}>
+            Shop More
+          </button>
+          <h2>
+            Gross Amount: ${cartItem.length > 0 ? totalAmount().toFixed(2) : 0}
+          </h2>
+          <button className="btn2" onClick={() => handleCheckout()}>
+            Checkout Now
+          </button>
         </div>
       )}
       <div className="main-cart-container">

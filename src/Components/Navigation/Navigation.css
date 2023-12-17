@@ -14,6 +14,10 @@
   font-weight: bold;
 }
 
+.nav-container > h3 > a:hover {
+  border-bottom: 0.2rem solid #eee;
+}
+
 .nav-container-pages > ul {
   display: flex;
   gap: 3rem;
@@ -46,4 +50,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cart-icon:hover {
+  color: orange;
+}
+
+.nav-container-pages a:hover {
+  border-bottom: 0.2rem solid #eee;
 }

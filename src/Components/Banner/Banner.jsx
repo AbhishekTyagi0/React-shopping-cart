@@ -1,7 +1,14 @@
 import React from "react";
 import "./Banner.css";
+import { useNavigate } from "react-router";
 
 const Banner = () => {
+  const navigate = useNavigate();
+
+  const shopNow = () => {
+    navigate("/shop");
+  };
+
   return (
     <div className="banner-container">
       <div className="banner-img-container"></div>
@@ -11,7 +18,7 @@ const Banner = () => {
           <h2>
             Starting <span>@55,999</span>* only
           </h2>
-          <button>Shop Now</button>
+          <button onClick={() => shopNow()}>Shop Now</button>
         </div>
         <div>
           <p>Pay on delivery</p>

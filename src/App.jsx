@@ -54,7 +54,7 @@ const App = () => {
 
   const handleBuyNow = (item) => {
     const updateCart = [...cartItem];
-    const findItem = updateCart.find((item) => item.id === item.id);
+    const findItem = updateCart.find((items) => items.id === item.id);
 
     if (findItem) {
       handleIncrement(item.id);
@@ -81,6 +81,13 @@ const App = () => {
           ? { ...item, cartItemQuantity: item.cartItemQuantity - 1 }
           : item
       )
+    );
+  };
+
+  const totalAmount = () => {
+    return cartItem.reduce(
+      (total, item) => total + item.price * item.cartItemQuantity,
+      0
     );
   };
 
@@ -111,9 +118,11 @@ const App = () => {
           element={
             <Cart
               cartItem={cartItem}
+              setCartItem={setCartItem}
               increaseItem={handleIncrement}
               decreaseItem={handleDecrement}
               onRemove={removeHandler}
+              totalAmount={() => totalAmount()}
             />
           }
         />

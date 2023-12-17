@@ -12,3 +12,11 @@ img {
   margin-top: auto;
   background-color: aliceblue;
 }
+
+.home-container {
+  height: 77vh;
+}
+
+.about-container {
+  height: 79vh;
+}
