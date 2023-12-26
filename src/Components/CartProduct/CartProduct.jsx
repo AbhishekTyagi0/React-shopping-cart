@@ -1,4 +1,4 @@
-import "./CartProduct.css";
+import "./cartProduct.css";
 
 const CartProduct = ({ cartItem, decreaseItem, increaseItem, onRemove }) => {
   return (
