@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
 import CartProduct from "../Components/CartProduct/CartProduct";
-import { useLocation, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 const Cart = ({
   cartItem,

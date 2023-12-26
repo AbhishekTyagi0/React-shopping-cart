@@ -59,3 +59,34 @@
 .nav-container-pages a:hover {
   border-bottom: 0.2rem solid #eee;
 }
+
+@media (max-width: 550px) {
+  .nav-container {
+    padding: 1rem 2rem;
+  }
+  .nav-container > h3 > a {
+    font-size: 0.9rem;
+  }
+  .nav-container-pages > ul {
+    gap: 1rem;
+  }
+  .nav-container-pages a {
+    font-size: 1rem;
+    font-weight: lighter;
+  }
+  .cart-icon {
+    width: 1rem;
+  }
+  .cart-icon > p {
+    top: -40%;
+    right: -60%;
+    font-size: 0.8rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    padding: 0.3rem;
+  }
+  .nav-container-pages a:hover {
+    border-bottom: none;
+  }
+}

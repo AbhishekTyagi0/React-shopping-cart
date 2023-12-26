@@ -2,6 +2,9 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  row-gap: 0.4rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .about-page > h2 {

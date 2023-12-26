@@ -78,3 +78,49 @@
   color: white;
   cursor: pointer;
 }
+
+@media (max-width: 550px) {
+  .card-container {
+    grid-template-columns: repeat(Auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+    margin: 1rem 1.5rem;
+  }
+  .cards {
+    gap: 0.3rem;
+    padding: 0.5rem 0.6rem;
+  }
+  .cards:hover {
+    transform: scale(1);
+  }
+  .cards > img {
+    height: 100px;
+  }
+  .cards > h3 {
+    font-size: 0.6rem;
+  }
+  .cards > div {
+    width: 100%;
+    height: 2rem;
+  }
+  .cards > p {
+    font-size: 0.8rem;
+  }
+  .cards > p > span {
+    font-size: 0.8rem;
+  }
+  .cards > div > p {
+    font-size: 0.8rem;
+  }
+  .cards > div > p > span {
+    font-size: 0.8rem;
+  }
+  .cards-button > :nth-child(1) {
+    padding: 0.4rem;
+    width: 6rem;
+  }
+  .cards-button > :nth-child(2) {
+    padding: 0.4rem;
+    width: 6rem;
+    border-radius: 0.3rem;
+  }
+}

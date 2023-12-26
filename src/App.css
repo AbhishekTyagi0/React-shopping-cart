@@ -20,3 +20,13 @@ img {
 .about-container {
   height: 79vh;
 }
+
+@media (max-width: 550px) {
+  .home-container {
+    height: 85vh;
+  }
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}

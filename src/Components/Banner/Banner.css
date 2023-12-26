@@ -62,3 +62,50 @@
   width: 60%;
   margin-bottom: 2.3rem;
 }
+
+@media (max-width: 550px) {
+  .banner-container {
+    width: 95%;
+    margin: 1rem auto;
+  }
+
+  .banner-img-container {
+    width: 80%;
+    height: 25vh;
+  }
+
+  .banner-led {
+    margin-top: 4.5rem;
+    display: flex;
+  }
+
+  .banner-led > div > h3 {
+    font-size: 0.8rem;
+    margin-left: 1rem;
+  }
+
+  .banner-led > div > h2 {
+    font-size: 1.2rem;
+    width: 130%;
+    margin-left: 1rem;
+    margin-top: 0.1rem;
+  }
+
+  .banner-led > div > button {
+    width: 5rem;
+    margin-top: 0.7rem;
+    padding: 0.2rem;
+    font-size: 0.8rem;
+    border-radius: 0.6rem;
+    border: 2px solid purple;
+    margin-left: 1rem;
+  }
+
+  .banner-led > div:nth-child(2) {
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 55%;
+    margin-bottom: 1rem;
+    font-size: 0.5rem;
+  }
+}
