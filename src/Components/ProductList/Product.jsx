@@ -1,5 +1,5 @@
 import ProductCard from "./ProductCard";
-import "./Products.css";
+import "./shopItems.css";
 
 const Product = ({ products, error, loading, onBuy, onAddToCart }) => {
   return (
